@@ -1,0 +1,15 @@
+{% extends 'common.html' %}
+
+{% block body %}
+    <h1>{{ title }}</h1>
+	<p>{{ message }}</p>
+	<form action="/inputForm1" method="POST" enctype="multipart/form-data">
+		<div>
+			<label for="name">テキスト：</label>
+			<input type="text" id="inputText" name="inputText" placeholder="何かを入力してください。">
+		</div>
+		<div>
+			<input type="submit" value="送信">
+		</div>
+	</form>
+{% endblock %}
