@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from modules import callAozoraList, callInputForm1, callInputForm2
+from modules import callAozoraList, callInputForm1, callInputForm2, callUserRegForm, callLoginForm
 import mysql.connector
 
 app = Flask(__name__)
@@ -38,7 +38,12 @@ def inputForm2():
 #ユーザー登録画面
 @app.route('/userRegForm', methods=["GET", "POST"])
 def userRegForm():
-    return callUserRegForm.doCallUserRegForm(app, request)
+    return callUserRegForm.doCallUserRegForm(app, request, con)
+
+#ログイン画面
+@app.route('/loginForm', methods=["GET", "POST"])
+def loginForm():
+    return callLoginForm.doCallLoginForm(app, request, con)
 
 if __name__ == '__main__':
     app.run()

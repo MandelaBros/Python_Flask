@@ -1,0 +1,21 @@
+{% extends 'common.html' %}
+
+{% block body %}
+    <h1>{{ title }}</h1>
+	<p>{{ message }}</p>
+	<form action="/loginForm" method="POST" enctype="multipart/form-data">
+		<div>
+			<p>
+				<label for="userName">ユーザー名：</label>
+				<input type="text" id="userName" name="userName" placeholder="ユーザー名">
+			</p>
+			<p>
+				<label for="password">パスワード：</label>
+				<input type="text" id="password" name="password" placeholder="パスワード">
+			</p>
+		</div>
+		<div>
+			<input type="submit" value="ログイン">
+		</div>
+	</form>
+{% endblock %}
