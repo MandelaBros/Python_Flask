@@ -1,4 +1,4 @@
-from flask import Flask, session, redirect, request
+from flask import Flask, session, redirect, request, render_template
 
 def doSetSession():
     session['loginFlg'] = True
@@ -7,7 +7,7 @@ def doRemoveSession():
     session['loginFlg'] = False
 
 def doCheckSession():
-    if session['loginFlg'] :
+    if session.get("loginFlg"):
         return True
     return False
 

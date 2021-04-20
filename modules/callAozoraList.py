@@ -23,7 +23,7 @@ def doCsvDownLoad(con):
   data = cursor.fetchall()
   csvStr = ""
   for dat in data:
-    csvStr += "著者名：" + dat[0] + "：作品名：" + dat[1] + "\n"
+    csvStr += "著者名：" + dat[0] + ",作品名：" + dat[1] + "\n"
   cursor.close()
 
   return Response(
